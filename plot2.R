@@ -18,8 +18,8 @@ names(df) <- c("Date","Time","Global_active_power","Global_reactive_power","Volt
 df$DateTime <- paste(df$Date, df$Time)
 df$DateTime <- strptime(df$DateTime,"%d/%m/%Y %H:%M:%S")
 
-#Plot a histogram of Global Active Power using the base plotting system
-with(df, plot(DateTime,Global_active_power, ylab = "Global Active Power(kilowatts)", type = 'l'))
+#Plot the graph of Global Active Power with respect to Date and Time using the base plotting system
+with(df, plot(DateTime,Global_active_power, ylab = "Global Active Power(kilowatts)", xlab =" ",type = 'l'))
 
 #Export the plot to a png file
 dev.copy(png, "plot2.png", width = 480, height = 480)
